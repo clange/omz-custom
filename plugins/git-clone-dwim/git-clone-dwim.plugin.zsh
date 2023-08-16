@@ -1,13 +1,15 @@
 function git-clone-dwim()
 {
     url="$1"
-    if [[ $url =~ https://(github\.com|gitlab\.com)/(.+)/[^/]+ ]]
+    if [[ $url =~ https://(github\.com|gitlab\.com)/(.+)/([^/]+) ]]
     then
         domain="${match[1]}"
         organization="${match[2]}"
+        repository="${match[3]}"
         dir="$HOME/git/$domain/$organization"
         mkdir -p "$dir"
         cd "$dir"
     fi
     git clone "$url"
+    cd "$repository"
 }
