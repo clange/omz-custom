@@ -1,0 +1,1 @@
+`fzf-cd` uses [fzf](https://github.com/junegunn/fzf) to select a directory to change to, matching the argument provided.  This is currently hard-coded for my Windows/Cygwin environment, using [Everything's es command-line interface](https://www.voidtools.com/support/everything/command_line_interface/) for filename search rather than `locate`, thus also adjusting Windows newlines.
